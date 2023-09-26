@@ -176,6 +176,13 @@ You can select and initialise a specific component by using its `data-module` at
   </script>
 ```
 
+When initialised individually, components will throw errors if GOV.UK Frontend is not supported, some key markup is missing or their configuration is invalid. 
+
+It's up to you to decide what to do with these errors and either:
+  
+  - let them break the flow of execution, preventing further code in the current script to run (and possibly get automatically reported to your error tracking service if you use one)
+  - handle the errors with a `try/catch` block to implement a different behaviour when an error occurs
+
 ### Import JavaScript using a bundler
 
 If you decide to import using a bundler, we recommend you use `import` to only import the JavaScript for components you're using in your service. For example:
